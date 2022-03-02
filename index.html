@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>slide-quiz</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="dist/css/main.css" />
+	</head>
+
+	<body>
+		<div class="page page-welcome">
+			<h1>Which Donda 2 song should you play with first on your stemplayer?</h1>
+			<div class="stem-landing"><img src="src/img/stm.png" alt="stemplayer svg"></div>
+			<button class="next">NEXT ⇸</button>
+		</div>
+
+		<div class="page page-q1">
+			<h1>Select which part of the song you gravitate towards first:</h1>
+			<div class="answer-choices">
+				<div class="broken-road">A. Vocals</div>
+				<div class="pablo">B. Drums</div>
+				<div class="security">C. Bass</div>
+				<div class="we-did-it-kid">D. Samples</div>
+			</div>
+			<button class="prev">⇷ PREV</button>
+			<button class="next">NEXT ⇸</button>
+			<div class="question-nav">
+				<a data-jump="2" href="#">Q2</a>
+				<a data-jump="3" href="#">Q3</a>
+				<a data-jump="4" href="#">Q4</a>
+				<a data-jump="5" href="#">Q5</a>
+			</div>
+		</div>
+
+		<div class="page page-q2">
+			<h1>Select the YZY Gap x Balenciaga look that fits your mood:</h1>
+			<div class="answer-choices">
+				<div class="broken-road"><img src="src/img/look01.png"></div>
+				<div class="pablo"><img src="src/img/look02.png"></div>
+				<div class="we-did-it-kid"><img src="src/img/look03.png"></div>
+				<div class="security"><img src="src/img/look04.png"></div>
+			</div>
+			<button class="prev">⇷ PREV</button>
+			<button class="next">NEXT ⇸</button>
+			<div class="question-nav">
+				<a data-jump="1" href="#">Q1</a>
+				<a data-jump="3" href="#">Q3</a>
+				<a data-jump="4" href="#">Q4</a>
+				<a data-jump="5" href="#">Q5</a>
+			</div>
+		</div>
+
+		<div class="page page-q3">
+			<h1>Select a YE tweet that fits your mood:</h1>
+			<div class="answer-choices">
+				<div class="broken-road"><img src="/src/img/tweet1.jpg"></div>
+				<div class="we-did-it-kid"><img src="/src/img/tweet2.jpg"></div>
+				<div class="security"><img src="/src/img/tweet3.jpg"></div>
+				<div class="pablo"><img src="/src/img/tweet4.jpg"></div>
+			</div>
+			<button class="prev">⇷ PREV</button>
+			<button class="next">NEXT ⇸</button>
+			<div class="question-nav">
+				<a data-jump="1" href="#">Q1</a>
+				<a data-jump="2" href="#">Q2</a>
+				<a data-jump="4" href="#">Q4</a>
+				<a data-jump="5" href="#">Q5</a>
+			</div>
+		</div>
+
+		<div class="page page-q4">
+			<h1>Select a poetry quote that fits your mood:</h1>
+			<div class="answer-choices">
+				<div class="we-did-it-kid">A: "Some men are bespoken; a certain path has been assigned them, and at its end there is something they must do, a deed allotted." Jean-Paul Sartre</div>
+				<div class="broken-road">B: "Believing means liberating the indestructible element in oneself, or, more accurately, liberating oneself, or, more accurately, being indestructible, or, more accurately, being." Franz Kafka</div>
+				<div class="pablo">C: "When you can't look on the bright side, I will sit with you in the dark" Lewis Carroll</div>
+				<div class="security">D: "I am my own obstacle" Szymborska</div>
+			</div>
+			<button class="prev">⇷ PREV</button>
+			<button class="next">NEXT ⇸</button>
+			<div class="question-nav">
+				<a data-jump="1" href="#">Q1</a>
+				<a data-jump="2" href="#">Q2</a>
+				<a data-jump="3" href="#">Q3</a>
+				<a data-jump="5" href="#">Q5</a>
+			</div>
+		</div>
+		<div class="page page-q5">
+			<h1>Bonus! Select your favorite feature:</h1>
+			<div class="answer-choices">
+				<div class="security">Ye x Ye</div>
+				<div class="pablo">Future</div>
+				<div class="broken-road">Don Toliver</div>
+				<div class="we-did-it-kid">Migos</div>
+			</div>
+			<button class="prev">⇷ PREV</button>
+			<button class="next last-button">NEXT ⇸</button>
+			<div class="question-nav">
+				<a data-jump="1" href="#">Q1</a>
+				<a data-jump="2" href="#">Q2</a>
+				<a data-jump="3" href="#">Q3</a>
+				<a data-jump="4" href="#">Q4</a>
+			</div>
+		</div>
+
+		<div class="page page-end">
+			<h1>Your result:</h1>
+			<div class="result"></div>
+			<button class="prev">⇷ PREV</button>
+			<button class="restart">RESTART ⟴</button>
+		</div>
+
+		<script src="dist/js/main.js"></script>
+	</body>
+</html>

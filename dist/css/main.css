@@ -1,0 +1,585 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 1. Main Layout ================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -2.2px;
+}
+
+/* 2. Content ================================= */
+.page {
+  display: none;
+  width: 80%;
+  background-color: white;
+  padding: 40px;
+  padding-bottom: 200px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 50%;
+  top: 50px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.page h1 {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  padding-bottom: 40px;
+}
+.page button {
+  position: absolute;
+  bottom: -20px;
+  font-size: 1.5em;
+  padding: 12px 22px;
+  border-radius: 100px;
+  background-color: #b3978e;
+  background: linear-gradient(90deg, #fe4131 0%, #2744fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2.5px solid #b3978e;
+  opacity: 0;
+  -webkit-animation: q-slide-in 1s ease-in forwards;
+          animation: q-slide-in 1s ease-in forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.page button:hover {
+  background: #b3978e;
+  -webkit-text-fill-color: white;
+  transition: 350ms ease-in-out;
+}
+.page button:active {
+  box-shadow: 0 5px #604742;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+.page button.prev {
+  left: 40px;
+}
+.page button.next {
+  right: 40px;
+}
+.page .answer-choices {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.page .answer-choices div {
+  height: 80px;
+  width: 40%;
+  margin: 15px;
+  padding: 30px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.page .answer-choices .selected {
+  position: relative;
+  background-color: white;
+  border-radius: 300px;
+}
+.page .answer-choices .selected:before {
+  content: "✟ ";
+}
+.page .answer-choices .selected:after {
+  content: " ✟";
+}
+.page .question-nav {
+  display: -webkit-flex;
+  display: flex;
+  width: 90%;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.page .question-nav a {
+  color: #eee;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 25px;
+  border: 3px solid #b3978e;
+  border-radius: 100px;
+  background: #e0827b;
+  background: linear-gradient(90deg, #e0827b 0%, #8f73e7 100%);
+}
+.page .question-nav a:hover {
+  background: linear-gradient(90deg, #fe4131 0%, #2744fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-welcome {
+  padding: 0px;
+  padding-bottom: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  text-align: center;
+}
+.page-welcome h1 {
+  position: relative;
+  opacity: 0;
+  top: 50px;
+  -webkit-animation: title-drift 2s ease-in;
+          animation: title-drift 2s ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+@-webkit-keyframes title-drift {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes title-drift {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page-welcome .stem-landing img {
+  position: relative;
+  top: 150px;
+  width: 200px;
+  -webkit-animation: stem-drift 5s ease-in;
+          animation: stem-drift 5s ease-in;
+}
+@-webkit-keyframes stem-drift {
+  0% {
+    top: -550px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+@keyframes stem-drift {
+  0% {
+    top: -550px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+.page-welcome button {
+  bottom: -75px;
+  right: 30px;
+  opacity: 0;
+  -webkit-animation: button-drift 1s ease-in forwards;
+          animation: button-drift 1s ease-in forwards;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+@-webkit-keyframes button-drift {
+  0% {
+    bottom: -45px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -75px;
+    opacity: 1;
+  }
+}
+@keyframes button-drift {
+  0% {
+    bottom: -45px;
+    opacity: 0;
+  }
+  100% {
+    bottom: -75px;
+    opacity: 1;
+  }
+}
+
+.page-q1 {
+  padding-bottom: 50px;
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+@-webkit-keyframes page-load {
+  0% {
+    left: -50%;
+    box-shadow: 0 40px 200px rgba(0, 0, 0, 0.5);
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes page-load {
+  0% {
+    left: -50%;
+    box-shadow: 0 40px 200px rgba(0, 0, 0, 0.5);
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+.page-q1 button {
+  bottom: 250px;
+}
+@-webkit-keyframes q-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes q-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page-q1 button.prev {
+  left: -70px;
+}
+.page-q1 button.next {
+  right: -70px;
+}
+
+.page-q2 {
+  padding-bottom: 30px;
+  margin-bottom: 100px;
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+.page-q2 .answer-choices div {
+  width: 20%;
+  height: 400px;
+}
+.page-q2 .answer-choices div img {
+  position: relative;
+  left: -17px;
+  width: 125px;
+  height: 300px;
+}
+.page-q2 button {
+  bottom: 300px;
+}
+.page-q2 button.prev {
+  left: -80px;
+}
+.page-q2 button.next {
+  right: -70px;
+}
+
+.page-q3 {
+  padding-bottom: 30px;
+  margin-bottom: 100px;
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+.page-q3 .answer-choices {
+  margin-bottom: 0px;
+}
+.page-q3 .answer-choices div {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  width: 45%;
+  height: 200px;
+}
+.page-q3 .answer-choices div img {
+  width: 260px;
+}
+.page-q3 .answer-choices .selected:before {
+  position: relative;
+  right: 60%;
+  top: 25%;
+}
+.page-q3 .answer-choices .selected:after {
+  position: relative;
+  left: 60%;
+  bottom: 30%;
+}
+.page-q3 button {
+  bottom: 330px;
+}
+.page-q3 button.prev {
+  left: -70px;
+}
+.page-q3 button.next {
+  right: -70px;
+}
+
+.page-q4 {
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+.page-q4 .answer-choices div {
+  height: 240px;
+}
+.page-q4 button {
+  bottom: 380px;
+}
+.page-q4 button.prev {
+  left: -70px;
+}
+.page-q4 button.next {
+  right: -70px;
+}
+
+.page-q5 {
+  padding-bottom: 50px;
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+.page-q5 button {
+  bottom: 250px;
+}
+.page-q5 button.prev {
+  left: -70px;
+}
+.page-q5 button.next {
+  right: -70px;
+}
+
+.page-end {
+  -webkit-animation: page-load 1.5s ease-in forwards;
+          animation: page-load 1.5s ease-in forwards;
+}
+.page-end .result div {
+  letter-spacing: 1px;
+  opacity: 0;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: linear-gradient(90deg, #e0827b 0%, #8f73e7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: results-surprise 1s ease-in forwards;
+          animation: results-surprise 1s ease-in forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+@-webkit-keyframes results-surprise {
+  0% {
+    opacity: 0;
+    font-size: 50px;
+  }
+  50% {
+    font-size: 60px;
+  }
+  100% {
+    font-size: 50px;
+    opacity: 1;
+  }
+}
+@keyframes results-surprise {
+  0% {
+    opacity: 0;
+    font-size: 50px;
+  }
+  50% {
+    font-size: 60px;
+  }
+  100% {
+    font-size: 50px;
+    opacity: 1;
+  }
+}
+.page-end button {
+  bottom: 50px;
+}
+.page-end button.restart {
+  right: 40px;
+}
+/*# sourceMappingURL=main.css.map */
