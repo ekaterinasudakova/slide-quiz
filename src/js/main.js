@@ -6,20 +6,16 @@ let allNextButtons = document.querySelectorAll('.next')
 let result = document.querySelector('.result')
 let restartButton = document.querySelector('.restart')
 let allJumpButtons = document.querySelectorAll('[data-jump]')
+let answerChoicesAllQuestions = document.querySelectorAll('.answer-choices')
+let allAnswerChoices = document.querySelectorAll('.answer-choices div')
+let lastButton = document.querySelector('.last-button')
+
+
 // index number in the array of the page we are currently looking at
 let currentPage = 0 
 console.log(restartButton)
 
-let answerChoicesAllQuestions = document.querySelectorAll('.answer-choices')
-let answerChoicesQuestionOne = answerChoicesAllQuestions[0].querySelectorAll('div')
-let answerChoicesQuestionTwo = answerChoicesAllQuestions[1].querySelectorAll('div')
-let answerChoicesQuestionThree = answerChoicesAllQuestions[2].querySelectorAll('div')
-let answerChoicesQuestionFour = answerChoicesAllQuestions[3].querySelectorAll('div')
-let answerChoicesQuestionFive = answerChoicesAllQuestions[4].querySelectorAll('div')
 
-
-let lastButton = document.querySelector('.last-button')
-console.log(lastButton)
 
 
 
@@ -39,8 +35,10 @@ let calculateResults = function (){
     highestScore = Math.max(brokenRoad, pablo, security, weDidItKid)
     console.log(highestScore)
 
-    if(result.hasChildNodes()){
-        result.removeChildNodes(0)
+    //while condition is true, loop and run the code until it's 
+    //no true anymore, then proceed down to the next code block
+    while(result.children.length){
+        result.children[0].remove()
     }
 
     //if item has been selected most often, create an element and create
@@ -77,53 +75,30 @@ lastButton.addEventListener('click', calculateResults)
 
 //highlight and add class to selected answer
 let highlightAnswer = function(){
-    // console.log(this.parentElement.querySelectorAll('div'))
+    //find next button and remove disabled attribute
+    this.parentElement.parentElement.querySelector('.next').disabled = false
     this.parentElement.querySelectorAll('div').forEach(function(answerChoice){
+        //loop through all answer choices and make sure none have
+        //selected class
         answerChoice.classList.remove('selected')
     })
     this.classList.add('selected')
 }
 
 //go through each answer choice and listen for a click
-answerChoicesQuestionOne.forEach(function(answerChoice) {
-    // console.log(answerChoice)
-    answerChoice.addEventListener('click', highlightAnswer)
-});
-answerChoicesQuestionTwo.forEach(function(answerChoice) {
-    // console.log(answerChoice)
-    answerChoice.addEventListener('click', highlightAnswer)
-});
-answerChoicesQuestionThree.forEach(function(answerChoice) {
-    // console.log(answerChoice)
-    answerChoice.addEventListener('click', highlightAnswer)
-});
-answerChoicesQuestionFour.forEach(function(answerChoice) {
-    // console.log(answerChoice)
-    answerChoice.addEventListener('click', highlightAnswer)
-});
-answerChoicesQuestionFive.forEach(function(answerChoice) {
-    // console.log(answerChoice)
+allAnswerChoices.forEach(function(answerChoice) {
     answerChoice.addEventListener('click', highlightAnswer)
 });
 
 //randomize answer order
 let randomizeAnswers = function(){
-    let allAnswers = allPages[currentPage].querySelector('.answer-choices')
-    let answers = allAnswers.children
-    let answersArr = Array.from(answers)
-    console.log(answersArr)
-    answersArr.sort(function(){
-        if (Math.random() > 0.5){
-			return -1
-		}
-		else {
-			return 1
-		}
-    })
+
+
 }
 
 
  allPages[0].style.display = 'flex'
+
  //logic making the buttons move pages
 let jumpToPage = function(pageNumber){
     allPages[currentPage].style.display = 'none'
@@ -141,29 +116,20 @@ let prevPage = function (){
     allPages[currentPage].style.display = 'none'
     currentPage--
     allPages[currentPage].style.display = 'flex'
+    allPages[currentPage].classList.add('quick')
 }
 
 
 //listen for clicks on buttons
 restartButton.addEventListener('click', function(){
-    allPages[allPages.length - 1].style.display = 'none'
-
-    allPages[0].style.display = 'flex'
+    jumpToPage(0)
 })
 
-//don't allow click through until selection is made
 allNextButtons.forEach(function(nextButton){
-    if(answerChoicesAllQuestions[currentPage].classList.contains(selected)){
-        nextButton.addEventListener('click', nextPage)
-    } else {
-        nextButton.disabled
-    }
-    // console.log('got a next button', nextButton)
-    
+    nextButton.addEventListener('click', nextPage)
 })
 
 allPrevButtons.forEach(function(prevButton){
-    // console.log('got a prev button', prevButton)
     prevButton.addEventListener('click', prevPage)
 })
 

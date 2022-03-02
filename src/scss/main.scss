@@ -149,9 +149,18 @@ body {
 			&:hover{
 				background: linear-gradient(90deg, rgba(254,65,49,1) 0%, rgba(39,68,252,1) 100%);
 				-webkit-background-clip: text;
-  				-webkit-text-fill-color: transparent;
+  				
+			-webkit-text-fill-color: transparent;
+			}
+
+			&[data-jump="1"]{
+
 			}
 		}
+	}
+
+	&.quick{
+		h1{}
 	}
 
 }
