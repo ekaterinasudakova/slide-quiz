@@ -107,6 +107,7 @@ let jumpToPage = function(pageNumber){
 }
 
 let nextPage = function (){
+    allPages[currentPage].classList.remove('quick')
     allPages[currentPage].style.display = 'none'
     currentPage++
     allPages[currentPage].style.display = 'flex'

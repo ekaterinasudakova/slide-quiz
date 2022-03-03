@@ -228,6 +228,13 @@ body {
 .page button.next {
   right: 40px;
 }
+.page button[disabled] {
+  background: -webkit-linear-gradient(#d5d5d5, #1d1d1d);
+  border: solid 2.5px #d5d5d5;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+}
 .page .answer-choices {
   display: -webkit-flex;
   display: flex;
@@ -280,6 +287,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .page-welcome {
   padding: 0px;
   padding-bottom: 0px;
@@ -287,14 +295,30 @@ body {
   box-shadow: none;
   text-align: center;
 }
+.page-welcome.quick h1 {
+  -webkit-animation: title-drift 0.1s ease-in forwards;
+          animation: title-drift 0.1s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-welcome.quick .stem-landing img {
+  -webkit-animation: stem-drift 0.01s ease-in;
+          animation: stem-drift 0.01s ease-in;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-welcome.quick button {
+  -webkit-animation: button-drift 0.01s ease-in forwards;
+          animation: button-drift 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
 .page-welcome h1 {
   position: relative;
   opacity: 0;
   top: 50px;
-  -webkit-animation: title-drift 2s ease-in;
-          animation: title-drift 2s ease-in;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: title-drift 2s ease-in forwards;
+          animation: title-drift 2s ease-in forwards;
   -webkit-animation-delay: 5s;
           animation-delay: 5s;
 }
@@ -343,8 +367,8 @@ body {
   opacity: 0;
   -webkit-animation: button-drift 1s ease-in forwards;
           animation: button-drift 1s ease-in forwards;
-  -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  -webkit-animation-delay: 7.4s;
+          animation-delay: 7.4s;
 }
 @-webkit-keyframes button-drift {
   0% {
@@ -372,6 +396,40 @@ body {
   -webkit-animation: page-load 1.5s ease-in forwards;
           animation: page-load 1.5s ease-in forwards;
 }
+.page-q1.quick {
+  -webkit-animation: page-load 0.01s ease-in forwards;
+          animation: page-load 0.01s ease-in forwards;
+}
+.page-q1.quick button {
+  -webkit-animation: q-slide-in 0.01s ease-in forwards;
+          animation: q-slide-in 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q1.quick .question-nav a[data-jump="2"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q1.quick .question-nav a[data-jump="3"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q1.quick .question-nav a[data-jump="4"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q1.quick .question-nav a[data-jump="5"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
 @-webkit-keyframes page-load {
   0% {
     left: -50%;
@@ -398,6 +456,8 @@ body {
 }
 .page-q1 button {
   bottom: 250px;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 @-webkit-keyframes q-slide-in {
   0% {
@@ -421,12 +481,98 @@ body {
 .page-q1 button.next {
   right: -70px;
 }
+.page-q1 .question-nav a[data-jump="2"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+@-webkit-keyframes jump-soft-roll {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes jump-soft-roll {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+.page-q1 .question-nav a[data-jump="3"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+.page-q1 .question-nav a[data-jump="4"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+.page-q1 .question-nav a[data-jump="5"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
 
 .page-q2 {
   padding-bottom: 30px;
   margin-bottom: 100px;
   -webkit-animation: page-load 1.5s ease-in forwards;
           animation: page-load 1.5s ease-in forwards;
+}
+.page-q2.quick {
+  -webkit-animation: page-load 0.01s ease-in forwards;
+          animation: page-load 0.01s ease-in forwards;
+}
+.page-q2.quick button {
+  -webkit-animation: q-slide-in 0.01s ease-in forwards;
+          animation: q-slide-in 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q2.quick .question-nav a[data-jump="1"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q2.quick .question-nav a[data-jump="3"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q2.quick .question-nav a[data-jump="4"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q2.quick .question-nav a[data-jump="5"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .page-q2 .answer-choices div {
   width: 20%;
@@ -440,12 +586,46 @@ body {
 }
 .page-q2 button {
   bottom: 300px;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 .page-q2 button.prev {
   left: -80px;
 }
 .page-q2 button.next {
   right: -70px;
+}
+.page-q2 .question-nav a[data-jump="1"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.page-q2 .question-nav a[data-jump="3"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+.page-q2 .question-nav a[data-jump="4"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+.page-q2 .question-nav a[data-jump="5"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .page-q3 {
@@ -454,14 +634,52 @@ body {
   -webkit-animation: page-load 1.5s ease-in forwards;
           animation: page-load 1.5s ease-in forwards;
 }
+.page-q3.quick {
+  -webkit-animation: page-load 0.01s ease-in forwards;
+          animation: page-load 0.01s ease-in forwards;
+}
+.page-q3.quick button {
+  -webkit-animation: q-slide-in 0.01s ease-in forwards;
+          animation: q-slide-in 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q3.quick .question-nav a[data-jump="1"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q3.quick .question-nav a[data-jump="2"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q3.quick .question-nav a[data-jump="4"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q3.quick .question-nav a[data-jump="5"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
 .page-q3 .answer-choices {
   margin-bottom: 0px;
 }
 .page-q3 .answer-choices div {
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-align-items: center;
+          align-items: center;
   width: 45%;
   height: 200px;
 }
@@ -470,22 +688,56 @@ body {
 }
 .page-q3 .answer-choices .selected:before {
   position: relative;
-  right: 60%;
-  top: 25%;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .page-q3 .answer-choices .selected:after {
   position: relative;
-  left: 60%;
-  bottom: 30%;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .page-q3 button {
   bottom: 330px;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 .page-q3 button.prev {
   left: -70px;
 }
 .page-q3 button.next {
   right: -70px;
+}
+.page-q3 .question-nav a[data-jump="1"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.page-q3 .question-nav a[data-jump="2"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+.page-q3 .question-nav a[data-jump="4"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+.page-q3 .question-nav a[data-jump="5"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .page-q4 {
@@ -494,11 +746,47 @@ body {
   -webkit-animation: page-load 1.5s ease-in forwards;
           animation: page-load 1.5s ease-in forwards;
 }
+.page-q4.quick {
+  -webkit-animation: page-load 0.01s ease-in forwards;
+          animation: page-load 0.01s ease-in forwards;
+}
+.page-q4.quick button {
+  -webkit-animation: q-slide-in 0.01s ease-in forwards;
+          animation: q-slide-in 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q4.quick .question-nav a[data-jump="1"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q4.quick .question-nav a[data-jump="2"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q4.quick .question-nav a[data-jump="3"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q4.quick .question-nav a[data-jump="5"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
 .page-q4 .answer-choices div {
   height: 240px;
 }
 .page-q4 button {
   bottom: 380px;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 .page-q4 button.prev {
   left: -70px;
@@ -506,20 +794,120 @@ body {
 .page-q4 button.next {
   right: -70px;
 }
+.page-q4 .question-nav a[data-jump="1"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.page-q4 .question-nav a[data-jump="2"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+.page-q4 .question-nav a[data-jump="3"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+.page-q4 .question-nav a[data-jump="5"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
 
 .page-q5 {
   padding-bottom: 50px;
   -webkit-animation: page-load 1.5s ease-in forwards;
           animation: page-load 1.5s ease-in forwards;
 }
+.page-q5.quick {
+  -webkit-animation: page-load 0.01s ease-in forwards;
+          animation: page-load 0.01s ease-in forwards;
+}
+.page-q5.quick button {
+  -webkit-animation: q-slide-in 0.01s ease-in forwards;
+          animation: q-slide-in 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q5.quick .question-nav a[data-jump="1"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q5.quick .question-nav a[data-jump="2"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q5.quick .question-nav a[data-jump="3"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.page-q5.quick .question-nav a[data-jump="4"] {
+  -webkit-animation: jump-soft-roll 0.01s ease-in forwards;
+          animation: jump-soft-roll 0.01s ease-in forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
 .page-q5 button {
   bottom: 250px;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 .page-q5 button.prev {
   left: -70px;
 }
 .page-q5 button.next {
   right: -70px;
+}
+.page-q5 .question-nav a[data-jump="1"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+.page-q5 .question-nav a[data-jump="2"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+.page-q5 .question-nav a[data-jump="3"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 2.9s;
+          animation-delay: 2.9s;
+}
+.page-q5 .question-nav a[data-jump="4"] {
+  opacity: 0;
+  position: relative;
+  -webkit-animation: jump-soft-roll 1s ease-in forwards;
+          animation: jump-soft-roll 1s ease-in forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 .page-end {
