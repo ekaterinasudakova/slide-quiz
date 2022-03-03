@@ -15,8 +15,20 @@ let lastButton = document.querySelector('.last-button')
 let currentPage = 0 
 console.log(restartButton)
 
+//randomize answer order
+let shuffleChildElements = function (parent) {
+    let children = parent.children
+    console.log(parent, children)
+    for (let i = 0; i < children.length; i++) {
+        let newPosition = Math.floor(Math.random() * children.length)
+        parent.insertBefore(children[i], children[newPosition])
+    }
+}
 
-
+answerChoicesAllQuestions.forEach(function(questionAnswerChoiceSet){
+    console.log(questionAnswerChoiceSet)
+    shuffleChildElements(questionAnswerChoiceSet)
+})
 
 
 let calculateResults = function (){
@@ -89,12 +101,6 @@ let highlightAnswer = function(){
 allAnswerChoices.forEach(function(answerChoice) {
     answerChoice.addEventListener('click', highlightAnswer)
 });
-
-//randomize answer order
-let randomizeAnswers = function(){
-
-
-}
 
 
  allPages[0].style.display = 'flex'
